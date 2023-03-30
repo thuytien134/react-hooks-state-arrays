@@ -6,11 +6,13 @@ function SpicyFoodList() {
   const [filterBy, setFilterBy] = useState("All");
   function handleAddFood() {
     const newFood = getNewSpicyFood();
-    console.log(newFood);
+    // add new food to the arr
     const newFoodArray = [...foods, newFood];
+    console.log(newFood);
     setFoods(newFoodArray)
   }
   function handleClick(id) {
+    // update the arr
     const newFoodArray = foods.map((food) => {
       if (food.id === id) {
         return {
@@ -26,6 +28,7 @@ function SpicyFoodList() {
 
 
   const foodsToDisplay = foods.filter((food) => {
+    // remove from  the arr
     if (filterBy === "All") {
       return true;
     } else {
